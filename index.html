@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>آهن‌پیچ | ساخت و نصب پله‌های آهنی پیچ‌دار</title>
+  <meta name="description" content="شرکت تخصصی طراحی، ساخت و نصب پله‌های آهنی پیچ‌دار و مارپیچ. مهندسی دقیق، متریال درجه یک، نصب حرفه‌ای با ۱۰ سال ضمانت." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-barba="wrapper">
+
+  <!-- ============================================ LOADING / INTRO OVERLAY ============================================ -->
+  <!-- Luxury brand intro — shows on every full page reload, max 2000ms -->
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-overlay__inner">
+      <!-- Spiral staircase logo as SVG (crisp at any resolution) -->
+      <div class="loading-logo">
+        <svg class="loading-logo__svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="آهن‌پیچ">
+          <defs>
+            <linearGradient id="loadingCopper" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F0B070"/>
+              <stop offset="50%" stop-color="#C97A3F"/>
+              <stop offset="100%" stop-color="#8A5224"/>
+            </linearGradient>
+            <linearGradient id="loadingCopperSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#D99560" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#8A5224" stop-opacity="0.3"/>
+            </linearGradient>
+            <filter id="loadingGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <radialGradient id="loadingHighlight" cx="35%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#F0B070" stop-opacity="0.55"/>
+              <stop offset="60%" stop-color="#F0B070" stop-opacity="0.05"/>
+              <stop offset="100%" stop-color="#F0B070" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Subtle radial highlight on the emblem (the "brushed metal" feel) -->
+          <circle cx="60" cy="60" r="55" fill="url(#loadingHighlight)" opacity="0"/>
+
+          <!-- Faint full spiral outline (visible behind the light trace) -->
+          <path id="loadingSpiralFaint"
+            d="M60 12 C 92 12, 108 36, 108 60 C 108 88, 88 108, 60 108 C 36 108, 18 90, 18 68"
+            fill="none" stroke="url(#loadingCopperSoft)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+          <!-- Central column of the staircase -->
+          <line x1="60" y1="20" x2="60" y2="105" stroke="url(#loadingCopper)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+          <!-- Three chevron steps rising along the column -->
+          <path d="M60 32 L50 42 L60 38 L70 42" fill="none" stroke="url(#loadingCopper)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <path d="M60 55 L50 65 L60 61 L70 65" fill="none" stroke="url(#loadingCopper)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <path d="M60 78 L50 88 L60 84 L70 88" fill="none" stroke="url(#loadingCopper)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+          <!-- The animated light trace — a copper line that draws along the spiral path -->
+          <path id="loadingLightTrace"
+            d="M60 12 C 92 12, 108 36, 108 60 C 108 88, 88 108, 60 108 C 36 108, 18 90, 18 68"
+            fill="none" stroke="#F0B070" stroke-width="2.5" stroke-linecap="round"
+            stroke-dasharray="320" stroke-dashoffset="320" filter="url(#loadingGlow)"/>
+
+          <!-- Traveling glow dot — follows the same spiral path -->
+          <circle id="loadingTravelDot" r="3.5" fill="#F0B070" opacity="0" filter="url(#loadingGlow)">
+            <animateMotion id="loadingDotMotion" dur="0.55s" begin="indefinite" fill="freeze" rotate="auto"
+              path="M60 12 C 92 12, 108 36, 108 60 C 108 88, 88 108, 60 108 C 36 108, 18 90, 18 68"/>
+          </circle>
+        </svg>
+        <!-- Soft bronze glow behind logo -->
+        <div class="loading-logo__halo" aria-hidden="true"></div>
+      </div>
+
+      <!-- Brand name -->
+      <div class="loading-brand" id="loadingBrand">
+        <div class="loading-brand__name">آهن<span class="loading-brand__accent">پیچ</span></div>
+        <div class="loading-brand__sub">SPIRAL STAIRS</div>
+      </div>
+    </div>
+    <!-- Subtle bottom fade so the reveal feels cinematic -->
+    <div class="loading-overlay__veil" aria-hidden="true"></div>
+  </div>
+
+  <!-- ============================================ HEADER ============================================ -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="آهن‌پیچ">
+        <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f0b070" />
+              <stop offset="100%" stop-color="#8a5224" />
+            </linearGradient>
+          </defs>
+          <path d="M20 4 C 30 4, 36 12, 36 20 C 36 28, 30 36, 20 36 C 14 36, 10 32, 10 28" fill="none" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M20 12 L20 36 M14 18 L20 12 L26 18" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+        <div class="logo-text">
+          <span class="name">آهن<span class="copper-text">پیچ</span></span>
+          <span class="sub">SPIRAL STAIRS</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="ناوبری اصلی">
+        <a href="#solutions">محصولات</a>
+        <a href="#materials">متریال</a>
+        <a href="#process">فرآیند</a>
+        <a href="#projects">نمونه‌کار</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <!-- Phone icon — always visible (mobile + desktop), links to contact section -->
+      <a href="#contact" class="header-phone-icon" aria-label="درخواست مشاوره تلفنی" title="درخواست مشاوره">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+
+      <!-- Desktop-only CTA button -->
+      <div class="header-cta">
+        <a href="#contact" class="btn btn-primary">درخواست مشاوره</a>
+      </div>
+    </div>
+  </header>
+
+  <main data-barba="container" data-barba-namespace="home">
+    <!-- ============================================ HERO ============================================ -->
+    <section class="hero" id="top">
+      <div class="hero-bg-grid bg-grid mask-radial" aria-hidden="true"></div>
+      <div class="hero-spotlight" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">
+              <span class="dot"></span>
+              <span>طراحی، ساخت و نصب تخصصی پله آهنی پیچ‌دار</span>
+            </div>
+            <h1>پله‌های آهنی پیچ‌دار<br>با <span class="copper-text">دقت میلی‌متری</span><br>و زیبایی ماندگار</h1>
+            <p class="hero-subtitle">از طراحی مهندسی تا ساخت در کارگاه مجهز و نصب حرفه‌ای در محل — پله‌های آهنی پیچ‌دار و مارپیچ را با متریال درجه یک و تلورانس <strong style="color: var(--fg)" dir="ltr">±۰٫۵ میلی‌متر</strong> تحویل می‌دهیم.</p>
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary btn-lg glow-copper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                درخواست مشاوره رایگان
+              </a>
+              <a href="#projects" class="btn btn-outline btn-lg">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                مشاهده نمونه‌کارها
+              </a>
+            </div>
+            <div class="hero-trust">
+              <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <span class="label">۱۰ سال</span>
+                <span class="sub">ضمانت ساخت</span>
+              </div>
+              <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7L8.7 21.3a2.4 2.4 0 0 1-3.4 0L2.7 18.7a2.4 2.4 0 0 1 0-3.4L15.3 2.7a2.4 2.4 0 0 1 3.4 0l2.6 2.6a2.4 2.4 0 0 1 0 3.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></svg>
+                <span class="label" dir="ltr">±۰٫۵mm</span>
+                <span class="sub">دقت مهندسی</span>
+              </div>
+              <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></svg>
+                <span class="label">۵۰۰+</span>
+                <span class="sub">پروژه موفق</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-wrap">
+            <div class="hero-image">
+              <img src="assets/hero.png" alt="پله آهنی پیچ‌دار مدرن" loading="eager" />
+              <div class="overlay"></div>
+              <div class="badge">
+                <div>
+                  <div class="lbl">سیستم</div>
+                  <div class="val" dir="ltr">SF-01 / Spiral Classic</div>
+                </div>
+                <div style="text-align: left;">
+                  <div class="lbl">ضخامت ورق</div>
+                  <div class="val primary" dir="ltr">5mm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ SOLUTIONS ============================================ -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div style="max-width: 36rem;">
+          <span class="section-eyebrow">۰۱ — راهکارها</span>
+          <h2 class="section-title">چهار سیستم اصلی<br><span class="copper-text">پله آهنی</span> ما</h2>
+          <p class="section-desc">هر پروژه بر اساس نوع کاربری، فضای موجود و سلیقه مشتری با یکی از چهار سیستم استاندارد ما طراحی و اجرا می‌شود. تمام سیستم‌ها قابل سفارشی‌سازی در ابعاد، رنگ و متریال هستند.</p>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img src="assets/product-spiral-classic.jpg" alt="پله پیچ‌دار کلاسیک" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="product-code">SF-01</div>
+              <div class="product-num">01</div>
+              <div class="product-title">پیچ‌دار کلاسیک</div>
+            </div>
+            <div class="product-body">
+              <p class="product-desc">پله مارپیچ با ستون مرکزی از ورق فولادی، مناسب فضاهای محدود و دوبلکس.</p>
+              <div class="product-tags">
+                <span class="product-tag">ستون مرکزی</span>
+                <span class="product-tag">قطر ۱۲۰–۲۰۰ سانتی‌متر</span>
+              </div>
+              <a href="#contact" class="product-link">درخواست این مدل <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img src="assets/product-industrial-spiral.jpg" alt="پله مارپیچ صنعتی" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="product-code">SF-02</div>
+              <div class="product-num">02</div>
+              <div class="product-title">مارپیچ صنعتی</div>
+            </div>
+            <div class="product-body">
+              <p class="product-desc">ساختار دو سرگرد با مقطع IPE و تیرآهن، ظرفیت بار بالا برای کاربری تجاری.</p>
+              <div class="product-tags">
+                <span class="product-tag">دو سرگرد</span>
+                <span class="product-tag">بار تا ۸۰۰ کیلوگرم</span>
+              </div>
+              <a href="#contact" class="product-link">درخواست این مدل <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img src="assets/product-cantilever.jpg" alt="پله کنسولی شناور" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="product-code">SF-03</div>
+              <div class="product-num">03</div>
+              <div class="product-title">کنسولی شناور</div>
+            </div>
+            <div class="product-body">
+              <p class="product-desc">پله‌های بدون تیر ظاهری متصل به دیوار با کنسول‌های فولادی، حس معلق و مدرن.</p>
+              <div class="product-tags">
+                <span class="product-tag">بدون تیر</span>
+                <span class="product-tag">طراحی مینیمال</span>
+              </div>
+              <a href="#contact" class="product-link">درخواست این مدل <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img src="assets/product-straight-steel.jpg" alt="پله مستقیم با تیر" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="product-code">SF-04</div>
+              <div class="product-num">04</div>
+              <div class="product-title">مستقیم با تیر مربوطه</div>
+            </div>
+            <div class="product-body">
+              <p class="product-desc">پله مستقیم با تیر اصلی IPE و جان‌پناه فولادی، مناسب ورودی ساختمان و صنعتی.</p>
+              <div class="product-tags">
+                <span class="product-tag">تیر IPE</span>
+                <span class="product-tag">نصب سریع</span>
+              </div>
+              <a href="#contact" class="product-link">درخواست این مدل <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ MATERIALS ============================================ -->
+    <section class="section section-alt" id="materials">
+      <div class="container">
+        <div class="materials-grid-outer">
+          <div class="materials-left">
+            <span class="section-eyebrow">۰۲ — متریال</span>
+            <h2 class="section-title">متریال<br><span class="copper-text">درجه یک</span></h2>
+            <p class="section-desc">تمام متریال با گواهی کیفیت کارخانه و تست میکرومتری ورودی وارد چرخه تولید می‌شوند. هر بچ تولید دارای پرونده ردیابی مواد اولیه است.</p>
+            <div class="tolerance-box">
+              <div class="lbl">دقت ورود به کارگاه</div>
+              <div class="val copper-text" dir="ltr">±۰٫۵mm</div>
+              <div class="desc">تلورانس پذیرش متریال طبق استاندارد ISO 2768-mK</div>
+            </div>
+          </div>
+
+          <div class="materials-grid">
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Fe</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">فولاد ST-37</span><span class="material-spec">۲٫۳۵ MPa</span></div>
+                  <p class="material-desc">ورق و پروفیل استاندارد ساختمانی، مقاومت ۲۳۵ مگاپاسکال. مناسب محیط داخلی و رطوبت کنترل‌شده.</p>
+                </div>
+              </div>
+            </article>
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Zn</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">فولاد گالوانیزه</span><span class="material-spec">زنگ‌زدگی ۰</span></div>
+                  <p class="material-desc">پوشش روی گرم جهت مقاومت در برابر خوردگی و زنگ‌زدگی، ایده‌آل برای فضای باز و مرطوب.</p>
+                </div>
+              </div>
+            </article>
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Ni</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">استیل ۳۰۴</span><span class="material-spec" dir="ltr">Cr 18% / Ni 8%</span></div>
+                  <p class="material-desc">فولاد ضدزنگ با کروم و نیکل، انتخابی لاکچری برای ویلایی و دکوراتیو با پرداخت آینه‌ای یا برس‌خورده.</p>
+                </div>
+              </div>
+            </article>
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Wd</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">چوب فشرده چنار</span><span class="material-spec" dir="ltr">ضخامت ۴۰mm</span></div>
+                  <p class="material-desc">روپوش پلکان از چوب جامبو با ضخامت ۴ سانتی‌متر، رنگ‌بندی و طرح customizable.</p>
+                </div>
+              </div>
+            </article>
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Si</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">شیشه سکوریت</span><span class="material-spec" dir="ltr">۱۰+10 mm</span></div>
+                  <p class="material-desc">جان‌پناه و پاشنه از شیشه tempered لاکچری ۱۰+۱۰ میلی‌متر لمینیت، امنیت و شفافیت کامل.</p>
+                </div>
+              </div>
+            </article>
+            <article class="material-card">
+              <div class="material-row">
+                <div class="material-symbol"><span class="sym">Co</span><span class="lbl">EL</span></div>
+                <div class="material-info">
+                  <div class="material-name-row"><span class="material-name">پوشش الکترواستاتیک</span><span class="material-spec" dir="ltr">RAL custom</span></div>
+                  <p class="material-desc">رنگ‌آمیزی کوره‌ای پودری در هر رنگ RAL با مقاومت بالا در برابر خراش و UV.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ PROCESS ============================================ -->
+    <section class="section" id="process">
+      <div class="container">
+        <div style="max-width: 36rem;">
+          <span class="section-eyebrow">۰۳ — فرآیند</span>
+          <h2 class="section-title">از طراحی تا تحویل،<br><span class="copper-text">پنج گام</span> شفاف</h2>
+          <p class="section-desc">هر پروژه از لحظه عقد قرارداد تا تحویل کلید در دست در یک سامانه ردیابی آنلاین قابل پیگیری است. هیچ مرحله‌ای بدون تأیید مشتری پیش نمی‌رود.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-line-desktop" aria-hidden="true"></div>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="process-num-wrap"><div class="process-num">۰۱</div></div>
+              <div class="process-body">
+                <h3 class="process-title">طراحی و مهندسی</h3>
+                <p class="process-desc">بازدید از محل، اندازه‌گیری دقیق، طراحی سه‌بعدی در SolidWorks و ارائه نقشه اجرایی.</p>
+                <div class="process-duration"><span class="dot"></span>۳–۵ روز</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num-wrap"><div class="process-num">۰۲</div></div>
+              <div class="process-body">
+                <h3 class="process-title">تولید در کارگاه</h3>
+                <p class="process-desc">برش CNC پلاسما، خم‌کاری ستون، جوش زیرپودری و کنترل کیفیت میکرومتری.</p>
+                <div class="process-duration"><span class="dot"></span>۷–۱۴ روز</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num-wrap"><div class="process-num">۰۳</div></div>
+              <div class="process-body">
+                <h3 class="process-title">آماده‌سازی سطح</h3>
+                <p class="process-desc">سندبلاست SA 2.5، پرایمر اپوکسی و رنگ‌آمیزی پودری الکترواستاتیک در کوره.</p>
+                <div class="process-duration"><span class="dot"></span>۲ روز</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num-wrap"><div class="process-num">۰۴</div></div>
+              <div class="process-body">
+                <h3 class="process-title">نصب در محل</h3>
+                <p class="process-desc">تیم نصب مجهز به جرثقیل و ابزار تخصصی، نصب و سطح‌بندی با لیزر در محل پروژه.</p>
+                <div class="process-duration"><span class="dot"></span>۱–۲ روز</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num-wrap"><div class="process-num">۰۵</div></div>
+              <div class="process-body">
+                <h3 class="process-title">تحویل و ضمانت</h3>
+                <p class="process-desc">تست بار، تحویل پرونده فنی و کارت ضمانت ۱۰ ساله، پشتیبانی پس از فروش.</p>
+                <div class="process-duration"><span class="dot"></span>همان روز</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ QUALITY ============================================ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="quality-grid">
+          <div class="quality-image-wrap">
+            <div class="quality-image">
+              <img src="assets/workshop.jpg" alt="کارگاه ساخت و جوش پله آهنی" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="stats">
+                <div class="stat"><div class="val" dir="ltr">±۰٫۵mm</div><div class="lbl">تلورانس برش</div></div>
+                <div class="stat"><div class="val">۱۰۰٪</div><div class="lbl">کنترل کیفیت</div></div>
+              </div>
+            </div>
+            <div class="quality-corner-tr" aria-hidden="true"></div>
+            <div class="quality-corner-bl" aria-hidden="true"></div>
+          </div>
+
+          <div class="quality-content">
+            <span class="section-eyebrow">۰۴ — کنترل کیفیت</span>
+            <h2 class="section-title">دقت در هر میلی‌متر،<br><span class="copper-text">اعتماد در هر پروژه</span></h2>
+            <p class="section-desc">کارگاه ۸۰۰ متری مجهز به دستگاه CNC پلاسما، خم‌کار هیدرولیک و کوره رنگ پودری، با تیم بازرسی مستقل که مستقیماً به مدیریت فنی گزارش می‌دهد. هر پله قبل از خروج از کارگاه پنج مرحله کنترل کیفیت را طی می‌کند.</p>
+
+            <div class="qc-grid">
+              <div class="qc-item">
+                <div class="qc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8a4 4 0 0 0 0-8h-8"/><path d="M2 12h4"/><path d="M10 6V2"/><path d="M14 6V2"/><path d="M18 6V2"/></svg></div>
+                <div><h3 class="qc-title">بازرسی ورود متریال</h3><p class="qc-desc">هر بچ فولاد با میکرومتر و اسپکترومتر تست می‌شود تا مطابقت با استاندارد ST-37 تأیید شود.</p></div>
+              </div>
+              <div class="qc-item">
+                <div class="qc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
+                <div><h3 class="qc-title">کنترل ابعاد CNC</h3><p class="qc-desc">تلورانس برش و خم‌کاری در هر قطعه با کولیس دیجیتال ضبط می‌شود. حد پذیرش ±۰٫۵ میلی‌متر.</p></div>
+              </div>
+              <div class="qc-item">
+                <div class="qc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></svg></div>
+                <div><h3 class="qc-title">تست جوش UT</h3><p class="qc-desc">تمام جوش‌های حیاتی با اولتراسونیک تست پیوستگی می‌شوند تا از عدم ترک و تخلخل مطمئن شویم.</p></div>
+              </div>
+              <div class="qc-item">
+                <div class="qc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <div><h3 class="qc-title">تست بار نهایی</h3><p class="qc-desc">پله مونتاژشده با بار ۵۰۰ کیلوگرم تست می‌شود تا انعطاف و صدای قطعات کنترل شود.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-bar">
+          <div class="stat"><div class="val copper-text">۵۰۰+</div><div class="lbl">پروژه موفق</div></div>
+          <div class="stat"><div class="val copper-text">۱۲</div><div class="lbl">سال تجربه</div></div>
+          <div class="stat"><div class="val copper-text">۱۰ سال</div><div class="lbl">ضمانت ساخت</div></div>
+          <div class="stat"><div class="val copper-text">۹۸٪</div><div class="lbl">رضایت مشتری</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ PROJECTS ============================================ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="projects-header">
+          <div style="max-width: 36rem;">
+            <span class="section-eyebrow">۰۵ — نمونه‌کار</span>
+            <h2 class="section-title">پروژه‌های<br><span class="copper-text">اجرا شده</span></h2>
+            <p class="section-desc">بیش از ۵۰۰ پروژه در سراسر کشور، از ویلای خصوصی تا مجتمع تجاری. هر پروژه با کد ردیابی منحصر به فرد و کارت ضمانت ۱۰ ساله تحویل می‌شود.</p>
+          </div>
+          <a href="#contact" class="btn btn-outline btn-lg btn-view-projects">
+            مشاهده تمام پروژه‌ها
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="assets/project-villa-navaran.jpg" alt="ویلای خصوصی نیاوران - پله مارپیچ سه طبقه" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="project-code">SF-01</div>
+              <div class="project-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>تهران، نیاوران</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>۱۴۰۳</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row"><h3 class="project-title">ویلای خصوصی — نیاوران</h3><span class="project-type">مسکونی / دوبلکس</span></div>
+              <p class="project-desc">پله مارپیچ سه‌طبقه با قطر ۱۸۰ سانتی‌متر، ورق ۵ میل با روپوش چوب گردو.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="assets/project-apartment-zafaraniyeh.jpeg" alt="آپارتمان دوبلکس زعفرانیه - پله کنسولی شناور" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="project-code">SF-03</div>
+              <div class="project-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>تهران، زعفرانیه</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>۱۴۰۳</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row"><h3 class="project-title">آپارتمان دوبلکس — زعفرانیه</h3><span class="project-type">مسکونی / لوکس</span></div>
+              <p class="project-desc">پله کنسولی شناور با جان‌پناه شیشه سکوریت و نورپردازی مخفی LED.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="assets/project-mall-kish.webp" alt="مجتمع تجاری کیش - پله مارپیچ صنعتی" loading="lazy" />
+              <div class="overlay"></div>
+              <div class="project-code">SF-02</div>
+              <div class="project-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>جزیره کیش</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>۱۴۰۲</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row"><h3 class="project-title">مجتمع تجاری — کیش</h3><span class="project-type">تجاری / عمومی</span></div>
+              <p class="project-desc">دو ردیده پله مارپیچ صنعتی با ظرفیت بالا و رنگ الکترواستاتیک RAL 7016.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ WHY US ============================================ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div style="max-width: 36rem;">
+          <span class="section-eyebrow">۰۶ — چرا ما</span>
+          <h2 class="section-title">چرا کارفرماها<br><span class="copper-text">ما را انتخاب می‌کنند</span></h2>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-num">01</div>
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <h3 class="why-title">طراحی اختصاصی</h3>
+            <p class="why-desc">هر پله بر اساس ابعاد محل، سبک دکوراسیون و سلیقه شما طراحی می‌شود. هیچ پله‌ای از کاتالوگ آماده فروخته نمی‌شود.</p>
+            <span class="why-badge">۱۰۰٪ سفارشی</span>
+          </article>
+          <article class="why-card">
+            <div class="why-num">02</div>
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></div>
+            <h3 class="why-title">متریال درجه یک</h3>
+            <p class="why-desc">فقط فولاد استاندارد ST-37 با گواهی کارخانه. هیچ متریال بازیافتی یا بدون استاندارد وارد کارخانه نمی‌شود.</p>
+            <span class="why-badge">ISO 2768-mK</span>
+          </article>
+          <article class="why-card">
+            <div class="why-num">03</div>
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7L8.7 21.3a2.4 2.4 0 0 1-3.4 0L2.7 18.7a2.4 2.4 0 0 1 0-3.4L15.3 2.7a2.4 2.4 0 0 1 3.4 0l2.6 2.6a2.4 2.4 0 0 1 0 3.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></svg></div>
+            <h3 class="why-title">دقت میلی‌متری</h3>
+            <p class="why-desc">برش CNC پلاسما با تلورانس ±۰٫۵ میلی‌متر. قطعات قبل از نصب در کارگاه مونتاژ آزمایشی می‌شوند.</p>
+            <span class="why-badge">±۰٫۵mm</span>
+          </article>
+          <article class="why-card">
+            <div class="why-num">04</div>
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3 class="why-title">ضمانت ۱۰ ساله</h3>
+            <p class="why-desc">هر پروژه با کارت ضمانت ۱۰ ساله ساخت و ۵ ساله رنگ تحویل می‌شود. خدمات پس از فروش در ۲۴ ساعت.</p>
+            <span class="why-badge">۱۰ سال</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ CTA / CONTACT ============================================ -->
+    <section class="section cta-section" id="contact">
+      <div class="cta-bg-grid bg-grid mask-radial" aria-hidden="true"></div>
+      <div class="cta-spotlight" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-grid">
+            <div class="cta-info">
+              <span class="section-eyebrow">۰۷ — درخواست مشاوره</span>
+              <h2 class="section-title">بیایید پله<br><span class="copper-text">رویایی شما</span> را بسازیم</h2>
+              <p class="section-desc">فرم را پر کنید یا مستقیم تماس بگیرید. کارشناس فنی ما ظرف ۲۴ ساعت برای بازدید رایگان و ارائه پیش‌فاکتور هماهنگ می‌کند.</p>
+
+              <div class="cta-contact-list">
+                <a href="tel:+982112345678" class="cta-contact-item">
+                  <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                  <div class="info"><div class="lbl">تماس مستقیم</div><div class="val" dir="ltr" style="text-align: right;">021-1234-5678</div></div>
+                </a>
+                <a href="mailto:info@aahan-pich.ir" class="cta-contact-item">
+                  <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                  <div class="info"><div class="lbl">ایمیل</div><div class="val" dir="ltr" style="text-align: right;">info@aahan-pich.ir</div></div>
+                </a>
+                <div class="cta-contact-item">
+                  <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                  <div class="info"><div class="lbl">کارگاه و دفتر مرکزی</div><div class="val">تهران، شهرک صنعتی فاز ۲، خیابان صنعتگران ۱۲</div></div>
+                </div>
+              </div>
+
+              <div class="cta-hours">
+                <span class="lbl">ساعات کاری</span>
+                <span class="val">شنبه تا پنجشنبه، ۸ تا ۱۸</span>
+              </div>
+            </div>
+
+            <div class="cta-form-wrap">
+              <form class="form" id="ctaForm">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label class="form-label" for="name">نام و نام خانوادگی</label>
+                    <input class="form-input" id="name" name="name" type="text" placeholder="مثلاً علی رضایی" required />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="phone">شماره تماس</label>
+                    <input class="form-input ltr" id="phone" name="phone" type="tel" placeholder="0912-345-6789" required />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="system">نوع پله موردنظر</label>
+                  <select class="form-select" id="system" name="system" required>
+                    <option value="" disabled selected>یک سیستم را انتخاب کنید</option>
+                    <option value="SF-01">SF-01 — پیچ‌دار کلاسیک</option>
+                    <option value="SF-02">SF-02 — مارپیچ صنعتی</option>
+                    <option value="SF-03">SF-03 — کنسولی شناور</option>
+                    <option value="SF-04">SF-04 — مستقیم با تیر مربوطه</option>
+                    <option value="other">سایر / نیاز به مشاوره دارم</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="address">آدرس تقریبی پروژه</label>
+                  <input class="form-input" id="address" name="address" type="text" placeholder="مثلاً تهران، زعفرانیه" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="note">توضیحات (اختیاری)</label>
+                  <textarea class="form-textarea" id="note" name="note" placeholder="ابعاد تقریبی، تعداد طبقات، سبک موردنظر..."></textarea>
+                </div>
+                <button class="form-submit" id="formSubmit" type="submit">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                  <span id="submitText">ثبت درخواست مشاوره</span>
+                </button>
+                <p class="form-note">با ثبت درخواست، موافقت خود را با <a href="#">سیاست حریم خصوصی</a> اعلام می‌کنید.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================ FOOTER ============================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-row">
+            <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f0b070" />
+                  <stop offset="100%" stop-color="#8a5224" />
+                </linearGradient>
+              </defs>
+              <path d="M20 4 C 30 4, 36 12, 36 20 C 36 28, 30 36, 20 36 C 14 36, 10 32, 10 28" fill="none" stroke="url(#footerLogoGrad)" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 12 L20 36 M14 18 L20 12 L26 18" stroke="url(#footerLogoGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            </svg>
+            <div class="logo-text">
+              <span class="name">آهن<span class="copper-text">پیچ</span></span>
+              <span class="sub">SPIRAL STAIRS</span>
+            </div>
+          </div>
+          <p>طراحی، ساخت و نصب تخصصی پله‌های آهنی پیچ‌دار و مارپیچ با ۱۲ سال تجربه و ۵۰۰+ پروژه موفق در سراسر کشور.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="اینستاگرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="تلگرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></a>
+            <a href="#" aria-label="لینکدین"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>دسترسی سریع</h4>
+          <ul>
+            <li><a href="#solutions">محصولات</a></li>
+            <li><a href="#materials">متریال</a></li>
+            <li><a href="#process">فرآیند ساخت</a></li>
+            <li><a href="#projects">نمونه‌کارها</a></li>
+            <li><a href="#contact">درخواست مشاوره</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>سیستم‌های پله</h4>
+          <ul>
+            <li><a href="#solutions" dir="ltr">SF-01 — پیچ‌دار کلاسیک</a></li>
+            <li><a href="#solutions" dir="ltr">SF-02 — مارپیچ صنعتی</a></li>
+            <li><a href="#solutions" dir="ltr">SF-03 — کنسولی شناور</a></li>
+            <li><a href="#solutions" dir="ltr">SF-04 — مستقیم با تیر</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>تماس با ما</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div><div class="lbl">تلفن</div><div class="val" dir="ltr" style="text-align: right;">021-1234-5678</div></div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <div><div class="lbl">ایمیل</div><div class="val" dir="ltr" style="text-align: right;">info@aahan-pich.ir</div></div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><div class="lbl">آدرس</div><div class="val">تهران، شهرک صنعتی فاز ۲، خیابان صنعتگران ۱۲</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© ۱۴۰۳ آهن‌پیچ — تمام حقوق محفوظ است.</span>
+        <div class="footer-bottom-links">
+          <a href="#">حریم خصوصی</a>
+          <span class="sep">|</span>
+          <a href="#">شرایط استفاده</a>
+          <span class="sep">|</span>
+          <span>ساخته‌شده با عشق در تهران</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="title">درخواست شما ثبت شد</div>
+    <div class="desc">کارشناسان ما حداکثر ظرف ۲۴ ساعت تماس می‌گیرند.</div>
+  </div>
+
+  <!-- ============================================ BOTTOM NAVIGATION (mobile) ============================================ -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="ناوبری پایین موبایل">
+    <a href="#solutions" class="bottom-nav-item" data-target="solutions" aria-label="محصولات">
+      <svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>
+      <span class="bn-label">محصولات</span>
+      <span class="bn-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#materials" class="bottom-nav-item" data-target="materials" aria-label="متریال">
+      <svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+        <polyline points="2 17 12 22 22 17"/>
+        <polyline points="2 12 12 17 22 12"/>
+      </svg>
+      <span class="bn-label">متریال</span>
+      <span class="bn-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#process" class="bottom-nav-item" data-target="process" aria-label="فرایند">
+      <svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 20h18"/>
+        <path d="M5 20V10l4-3v13"/>
+        <path d="M11 20V7l4-3v16"/>
+        <path d="M17 20v-7l4-2v9"/>
+      </svg>
+      <span class="bn-label">فرایند</span>
+      <span class="bn-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#projects" class="bottom-nav-item" data-target="projects" aria-label="نمونه کار">
+      <svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span class="bn-label">نمونه کار</span>
+      <span class="bn-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#contact" class="bottom-nav-item" data-target="contact" aria-label="تماس">
+      <svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span class="bn-label">تماس</span>
+      <span class="bn-dot" aria-hidden="true"></span>
+    </a>
+  </nav>
+
+  <!-- ============================================ EXTERNAL LIBRARIES ============================================ -->
+  <!-- Lenis — smooth scroll with inertia -->
+  <script src="vendor/lenis.min.js"></script>
+  <!-- barba.js — page transitions (PJAX) -->
+  <script src="vendor/barba.umd.min.js"></script>
+  <!-- GSAP — animation engine -->
+  <script src="vendor/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger plugin -->
+  <script src="vendor/ScrollTrigger.min.js"></script>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
